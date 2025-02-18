@@ -37,7 +37,7 @@ public record Background(BackgroundColor color) implements MenuItem {
     @Override
     public void placeItems(Inventory inventory) {
         for (int i = 0; i < inventory.getSize(); i++) {
-            if(inventory.getItem(i) == null) continue;
+            if(inventory.getItem(i) != null) continue;
             inventory.setItem(i,color.item());
         }
     }
