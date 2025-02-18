@@ -113,15 +113,18 @@ public class Menu implements InventoryHolder {
     }
 
     public void onDrag(InventoryDragEvent event) {
+        event.setCancelled(true);
         for (MenuItem item : items) if(item.listensTo(event))item.on(event);
         if(onDrag!=null)onDrag.accept(event);
     }
 
     public void onClick(InventoryClickEvent event){
+        event.setCancelled(true);
         for (MenuItem item : items) if(item.listensTo(event))item.on(event);
     }
 
     public void onMove(InventoryMoveItemEvent event) {
+        event.setCancelled(true);
         if(onMove!=null)onMove.accept(event);
     }
 
