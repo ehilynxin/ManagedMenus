@@ -102,19 +102,19 @@ public class Menu implements InventoryHolder {
         tickTask = new MenuTickTask(this,(Player) event.getPlayer());
         tickTask.runTaskTimer(plugin,1,1);
         for (MenuItem item : items) if(item.listensTo(event))item.on(event);
-        onOpen.accept(event);
+        if(onOpen!=null)onOpen.accept(event);
     }
 
     public void onClose(InventoryCloseEvent event) {
         for (MenuItem item : items) if(item.listensTo(event))item.on(event);
-        onClose.accept(event);
         tickTask.cancel();
         tickTask=null;
+        if(onClose!=null)onClose.accept(event);
     }
 
     public void onDrag(InventoryDragEvent event) {
         for (MenuItem item : items) if(item.listensTo(event))item.on(event);
-        onDrag.accept(event);
+        if(onDrag!=null)onDrag.accept(event);
     }
 
     public void onClick(InventoryClickEvent event){
@@ -122,7 +122,7 @@ public class Menu implements InventoryHolder {
     }
 
     public void onMove(InventoryMoveItemEvent event) {
-        onMove.accept(event);
+        if(onMove!=null)onMove.accept(event);
     }
 
     public Menu addItem(MenuItem item){
