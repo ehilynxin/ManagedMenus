@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dev.efekos.mm</groupId>
+    <groupId>dev.ehilynxin.mm</groupId>
     <artifactId>mm-root</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <name>ManagedMenusRoot</name>
     <modules>
         <module>paper</module>
@@ -17,7 +17,7 @@
     <distributionManagement>
         <repository>
             <id>efekosdev</id>
-            <url>file://C:\EfekosDev\Maven</url>
+            <url></url>
         </repository>
     </distributionManagement>
 
@@ -69,7 +69,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.4.1</version>
                 <configuration>
-                    <outputDirectory>C:\Java\ManagedMenus\build</outputDirectory>
+                    <outputDirectory></outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
